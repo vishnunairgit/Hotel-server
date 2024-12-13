@@ -23,10 +23,17 @@ const  app = express();
 // Database connection
 connectToDatabase()
 
-app.use(cors({
-  origin:['https://hotel-client-honp.onrender.com', 'http://http://localhost:3000']
-}));
+// app.use(cors({
+//   origin:['https://hotel-client-honp.onrender.com','http://localhost:3000']
+// }));
 
+
+app.use(cors({
+  origin: ['https://hotel-client-honp.onrender.com', 'http://localhost:3000'], // Allowed origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  credentials: true // Allow cookies
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
