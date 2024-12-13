@@ -23,9 +23,9 @@ const  app = express();
 // Database connection
 connectToDatabase()
 
-// app.use(cors({
-//   origin:['https://hotel-client-honp.onrender.com','http://localhost:3000']
-// }));
+app.use(cors({
+  origin: ['https://hotel-client-honp.onrender.com', 'http://localhost:3000']
+}));
 
 app.use(cors({
   origin: '*'
